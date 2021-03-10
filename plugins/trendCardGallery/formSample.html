@@ -1,0 +1,154 @@
+<div class="row" id="update-group">
+  <style>
+      .bootstrap-tagsinput {
+        width: 100%;
+      }
+      .datepicker {
+        padding: 0px !important;
+      }
+      .input-group {
+        z-index: 0 !important;
+      }
+      .btn-file {
+          position: relative;
+          overflow: hidden;
+      }
+      .btn-file input[type=file] {
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 100%;
+          min-height: 100%;
+          font-size: 100px;
+          text-align: right;
+          filter: alpha(opacity=0);
+          opacity: 0;
+          outline: none;
+          background: white;
+          cursor: inherit;
+          display: block;
+      }
+  </style>
+  <div class="col-sm-5" >
+    <form action="update.php" method="post" enctype="multipart/form-data" id="updateForm" class="form-horizontal">
+      <div class="form-group row">
+        <input type="hidden" class="form-control" id="inputID" name="ID" placeholder="ID">
+      </div>
+      <div class="form-group row">
+        <label for="inputTitle" class="col-sm-4 col-form-label">Title</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputTitle" name="Title" placeholder="Title">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputType" class="col-sm-4 col-form-label">Type</label>
+          <div class="col-sm-8">
+            <select class="browser-default custom-select form-control" id="inputType" name="Type">
+              <option value="1">Fashion</option>
+              <option value="2">Transport</option>
+              <option value="3">Color</option>
+              <option value="4">Visual</option>
+              <option value="5">CMF</option>
+              <option value="6">Form</option>
+              <option value="7">Space</option>
+              <option value="8">Technology</option>
+              <option value="9">UX</option>
+              <option value="10">Thinking</option>
+              <option value="11">Mechanism</option>
+    <!--                     <option value="12">PC</option>
+              <option value="13">Communications</option>
+              <option value="14">Home Appliance</option>
+              <option value="15">Electronics</option>
+              <option value="16">AIoT</option>
+              <option value="17">Furniture & Lighting</option>
+              <option value="18">Interior Architecture</option>
+              <option value="19">Office</option>
+              <option value="20">Watches & Luxuries</option>
+              <option value="21">Outdoor,Sport & Leisure</option> -->
+            </select>
+          </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPt" class="col-sm-4 col-form-label">Project Name</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputPt" name="Product_type" placeholder="Raytrace, Digit etc.">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputDesign" class="col-sm-4 col-form-label">Designer</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputDesign" name="Designer" placeholder="Designer or company name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPlace" class="col-sm-4 col-form-label">Place</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputPlace" name="Place" placeholder="Gemany, USA, Italy etc.">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputRd" class="col-sm-4 col-form-label">Release Date</label>
+        <div class="col-sm-8">
+          <div class="input-group date datepicker">
+            <input type="text" class="form-control" id="inputRd" name="Release_date" readonly>
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputCreator" class="col-sm-4 col-form-label">Creator</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputCreator" name="Creator" placeholder="AP/XX/XXXX">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputWebsite" class="col-sm-4 col-form-label">Website</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputWebsite" name="Website" placeholder="https://reurl.cc/EeNLR">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputContent" class="col-sm-4 col-form-label">Inspiration description
+    </label>
+        <div class="col-sm-8">
+          <textarea class="form-control" id="inputContent" name="Content" rows="6" placeholder="Please input Content..."></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="imgInp" class="col-sm-4 col-form-label">Upload Image</label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input type="text" class="form-control" name="fileName" readonly>
+            <span class="input-group-btn">
+                <span class="btn btn-default btn-file">
+                    Browse<input type="file" id="imgInp" name="file">
+                </span>
+            </span>                
+          </div>  
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputTags" class="col-sm-4 col-form-label">Add some tags</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="inputTags" name="Tags" data-role="tagsinput"/>
+        </div>
+      </div>
+      <div class="form-group row" align="right">
+        <div class="btn-field">
+          <button id="cancelBtn" name="cancelBtn" class="btn btn-error">Cancel</button>
+          <button id="submitBtn" type="submit" name="submitBtn" class="btn btn-success">Update</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="plugins/datepicker/js/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="plugins/datepicker/locales/bootstrap-datepicker.uk.min.js"></script>
+  <script type="text/javascript" src="plugins/tagsinput/bootstrap-tagsinput.js"></script>
+  <script type="text/javascript" src="plugins/bootstrapValidate/js/bootstrapValidator.js"></script>
+  <script type="text/javascript" src="update.js?@20200414"></script>
+  <script>
+  </script>
+</div>
