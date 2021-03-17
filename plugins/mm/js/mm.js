@@ -171,7 +171,7 @@
         cache: false,
         data:fetch,
         success: function(dataResult){
-          //alert('Data updated successfully !');
+          alert('Data updated successfully !');
           self.previewMode();
         }
       });

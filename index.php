@@ -226,7 +226,7 @@
 <script type="text/javascript" src="plugins/datepicker/locales/bootstrap-datepicker.uk.min.js"></script>
 <script type="text/javascript" src="plugins/tagsinput/bootstrap-tagsinput.js"></script>
 <script type="text/javascript" src="plugins/bootstrapValidate/js/bootstrapValidator.js"></script>
-<script type="text/javascript" src="plugins/mm/js/mm.js?@20210305"></script>
+<script type="text/javascript" src="plugins/mm/js/mm.js?@20210317"></script>
 <!-- <script type="text/javascript" src="TrendCardGallery.js?@20200320"></script> -->
 <script type="text/javascript" src="trend.js?@20201111"></script>
 <script>
