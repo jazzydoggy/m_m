@@ -5,7 +5,7 @@
     {
         require_once "config.php";
         require_once "TOSBC.php";
-        $path = "plugins/trendCardGallery/upload/";
+        //$path = "plugins/trendCardGallery/upload/";
 
         $id = convertStrType($_POST['id'],'TOSBC');
         $name = convertStrType($_POST['name'],'TOSBC');      

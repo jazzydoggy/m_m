@@ -3,7 +3,7 @@
     {
         require_once "config.php";
         require_once "TOSBC.php";
-        $path = "plugins/trendCardGallery/upload/";
+        //$path = "plugins/trendCardGallery/upload/";
 
         $name = convertStrType($_POST['Name'],'TOSBC');      
         $type = convertStrType($_POST['Type'],'TOSBC');
@@ -25,7 +25,7 @@
             $conn->query($insertSql);
         }
 
-        header("Location:form.php");
+        header("Location:index.php");
     }
     
 ?>
